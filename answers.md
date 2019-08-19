@@ -67,3 +67,25 @@ info.removeChild(bioinfoitems[1])
 info.removeChild(bioinfoitems[2])
 
 
+#Part 2
+1. That drawing of Pikachu is really cute. Let’s duplicate it using cloneNode() and insert it at the bottom of the .portfolio-container using insertAdjacentHTML() or appendChild().
+
+let pikachu = document.querySelector('#right-image')
+pikachu.insertAdjacentHTML('afterend', pikachu.innerHTML)
+
+let duppikachu2 = pikachu.cloneNode([deep=true])
+pikachu.insertAdjacentHTML('afterend', duppikachu2.innerHTML)
+
+2. Wow, that was so satisfying I think we should do it 10 more times. Use a for loop to help you do this.
+
+for(i=0; i<=10; i++){
+    pikachu.insertAdjacentHTML('afterend', duppikachu2.innerHTML)}
+
+3. Let’s add a message about when the page was last updated. We'll do this by appending a new <li> element to the <ul> in the sidebar (you might need to refresh the page to bring back the list items that we emptied out earlier).
+
+const rightSpan = document.createElement('span');
+var rightNow = document.createTextNode(new Date());
+rightSpan.appendChild(rightNow);
+listItem.appendChild(rightSpan);
+theList = document.querySelector('.bio-info')
+theList.appendChild(listItem)
